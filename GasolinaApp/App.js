@@ -10,6 +10,7 @@ import React, { useState } from "react";
 import styles from "./src/styles/Stylesheet";
 import PrimeiraImagem from "./src/components/ImageOne";
 import SegundaImagem from "./src/components/ImageTwo";
+import Textos from "./src/components/Text";
 
 const App = () => {
   const [alcool, setAlcool] = useState("");
@@ -33,15 +34,16 @@ const App = () => {
   return (
     <View style={styles.container}>
       <PrimeiraImagem />
-      <Text style={styles.txtlogo}>Qual melhor opção?</Text>
-      <Text style={styles.label}>Álcool (preço por litro):</Text>
+      <Textos estilo={styles.txtlogo} texto="Qual melhor opção?" />
+      <Textos estilo={styles.label} texto="Àlcool (Preço por litro):" />
+
       <TextInput
         style={styles.input}
         onChangeText={(text) => setAlcool(text)}
         value={alcool}
         keyboardType="numeric"
       />
-      <Text style={styles.label2}>Gasolina (preço por litro):</Text>
+      <Textos estilo={styles.label2} texto="Gasolina (Preço por litro):" />
       <TextInput
         style={styles.input}
         onChangeText={(text) => setGasolina(text)}
@@ -51,7 +53,6 @@ const App = () => {
       <TouchableOpacity style={styles.button} onPress={calcularCombustivel}>
         <Text style={styles.buttonText}>Calcular</Text>
       </TouchableOpacity>
-
       <Modal
         animationType="slide"
         transparent={true}
@@ -62,14 +63,22 @@ const App = () => {
       >
         <View style={styles.modalContainer}>
           <SegundaImagem />
-          <Text style={styles.modalText1}>Recomendação: {recomendacao}</Text>
 
-          <Text style={styles.modalTitle2}>Com os preços:</Text>
-          <Text style={styles.modalText2}>Preço do Álcool: R$ {alcool}</Text>
-          <Text style={styles.modalText3}>
-            Preço da Gasolina: R$ {gasolina}
-          </Text>
+          <Textos
+            estilo={styles.modalText1}
+            texto={`Recomendacao: ${recomendacao}`}
+          />
 
+          <Textos estilo={styles.modalTitle2} texto="Com os preços:" />
+
+          <Textos
+            estilo={styles.modalText2}
+            texto={`Preço do Àlcool : R$ ${alcool}`}
+          />
+          <Textos
+            estilo={styles.modalText3}
+            texto={`Preço da Gasolina : R$ ${gasolina}`}
+          />
           <TouchableOpacity style={styles.button2} onPress={calcularNovamente}>
             <Text style={styles.buttonText2}>Calcular Novamente</Text>
           </TouchableOpacity>
