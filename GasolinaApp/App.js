@@ -63,13 +63,15 @@ const App = () => {
         <View style={styles.modalContainer}>
           <SegundaImagem />
           <Text style={styles.modalText1}>Recomendação: {recomendacao}</Text>
+
+          <Text style={styles.modalTitle2}>Com os preços:</Text>
           <Text style={styles.modalText2}>Preço do Álcool: R$ {alcool}</Text>
           <Text style={styles.modalText3}>
             Preço da Gasolina: R$ {gasolina}
           </Text>
 
-          <TouchableOpacity style={styles.button} onPress={calcularNovamente}>
-            <Text style={styles.buttonText}>Calcular Novamente</Text>
+          <TouchableOpacity style={styles.button2} onPress={calcularNovamente}>
+            <Text style={styles.buttonText2}>Calcular Novamente</Text>
           </TouchableOpacity>
         </View>
       </Modal>

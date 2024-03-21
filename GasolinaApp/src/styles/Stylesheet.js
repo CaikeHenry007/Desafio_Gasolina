@@ -51,10 +51,34 @@ const styles = StyleSheet.create({
     alignItems: "center",
     marginTop: 20,
   },
+
+  button2: {
+    backgroundColor: "#000",
+    borderRadius: 5,
+    padding: 10,
+    width: "80%",
+    alignItems: "center",
+    marginTop: 20,
+    borderColor: "red",
+    borderWidth: 1,
+  },
   buttonText: {
     color: "white",
     fontSize: 20,
   },
+
+  buttonText2: {
+    color: "red",
+    fontSize: 20,
+  },
+
+  modalTitle2: {
+    fontSize: 30,
+    color: "white",
+    fontWeight: "bold",
+    marginBottom: "2%",
+  },
+
   modalContainer: {
     backgroundColor: "black",
     alignItems: "center",
@@ -66,6 +90,7 @@ const styles = StyleSheet.create({
     fontSize: 35,
     marginVertical: 10,
     fontWeight: "bold",
+    marginTop: '2%'
   },
 
   modalText2: {
