@@ -1,16 +1,15 @@
 import {
-  Text,
+
   View,
   TextInput,
-  Image,
-  TouchableOpacity,
-  Modal,
+
 } from "react-native";
 import React, { useState } from "react";
 import styles from "./src/styles/Stylesheet";
 import PrimeiraImagem from "./src/components/ImageOne";
-import SegundaImagem from "./src/components/ImageTwo";
 import Textos from "./src/components/Text";
+import Botao from "./src/components/ButtonComponent";
+import ModalTela from "./src/components/Modal";
 
 const App = () => {
   const [alcool, setAlcool] = useState("");
@@ -50,40 +49,17 @@ const App = () => {
         value={gasolina}
         keyboardType="numeric"
       />
-      <TouchableOpacity style={styles.button} onPress={calcularCombustivel}>
-        <Text style={styles.buttonText}>Calcular</Text>
-      </TouchableOpacity>
-      <Modal
-        animationType="slide"
-        transparent={true}
-        visible={modalVisible}
-        onRequestClose={() => {
-          setModalVisible(false);
-        }}
-      >
-        <View style={styles.modalContainer}>
-          <SegundaImagem />
+      <Botao ButtonValue={calcularCombustivel} />
 
-          <Textos
-            estilo={styles.modalText1}
-            texto={`Recomendacao: ${recomendacao}`}
-          />
+      <ModalTela animacao="slide"
+        transparencian={true}
+        visivel={modalVisible}
+        ButtonValue={calcularNovamente}
+        recomended={`Recomendação: ${recomendacao}`}
+        etanol={`Álcool: R$ ${alcool}`}
+        gas={`Gasolina: R$ ${gasolina}`}
+        setModal={() => { setModalVisible(false); }} />
 
-          <Textos estilo={styles.modalTitle2} texto="Com os preços:" />
-
-          <Textos
-            estilo={styles.modalText2}
-            texto={`Preço do Àlcool : R$ ${alcool}`}
-          />
-          <Textos
-            estilo={styles.modalText3}
-            texto={`Preço da Gasolina : R$ ${gasolina}`}
-          />
-          <TouchableOpacity style={styles.button2} onPress={calcularNovamente}>
-            <Text style={styles.buttonText2}>Calcular Novamente</Text>
-          </TouchableOpacity>
-        </View>
-      </Modal>
     </View>
   );
 };
