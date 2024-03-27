@@ -1,9 +1,5 @@
-import {
-
-  View,
-  TextInput,
-
-} from "react-native";
+// Importando os componentes
+import { View, TextInput } from "react-native";
 import React, { useState } from "react";
 import styles from "./src/styles/Stylesheet";
 import PrimeiraImagem from "./src/components/ImageOne";
@@ -12,11 +8,13 @@ import Botao from "./src/components/ButtonComponent";
 import ModalTela from "./src/components/Modal";
 
 const App = () => {
+  // Criando as constantes
   const [alcool, setAlcool] = useState("");
   const [gasolina, setGasolina] = useState("");
   const [modalVisible, setModalVisible] = useState(false);
   const [recomendacao, setRecomendacao] = useState("");
 
+  // Função de calcular qual combustível compensa
   const calcularCombustivel = () => {
     const razao = parseFloat(alcool) / parseFloat(gasolina);
     const mensagem = razao < 0.7 ? "Álcool" : "Gasolina";
@@ -24,6 +22,7 @@ const App = () => {
     setModalVisible(true);
   };
 
+  // Função para ir calcular novamente
   const calcularNovamente = () => {
     setAlcool("");
     setGasolina("");
@@ -31,6 +30,7 @@ const App = () => {
   };
 
   return (
+    // Página principal
     <View style={styles.container}>
       <PrimeiraImagem />
       <Textos estilo={styles.txtlogo} texto="Qual melhor opção?" />
@@ -51,15 +51,19 @@ const App = () => {
       />
       <Botao ButtonValue={calcularCombustivel} />
 
-      <ModalTela animacao="slide"
+      {/* Página do Modal */}
+      <ModalTela
+        animacao="slide"
         transparencian={true}
         visivel={modalVisible}
         ButtonValue={calcularNovamente}
         recomended={`Recomendação: ${recomendacao}`}
         etanol={`Álcool: R$ ${alcool}`}
         gas={`Gasolina: R$ ${gasolina}`}
-        setModal={() => { setModalVisible(false); }} />
-
+        setModal={() => {
+          setModalVisible(false);
+        }}
+      />
     </View>
   );
 };

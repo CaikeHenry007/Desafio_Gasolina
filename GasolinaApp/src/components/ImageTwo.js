@@ -1,4 +1,5 @@
-import { Image, View } from "react-native";
+// Imagem do Modal
+import { Image } from "react-native";
 import styles from "../styles/Stylesheet";
 
 export default function SegundaImagem() {

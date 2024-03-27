@@ -1,6 +1,8 @@
 import { StyleSheet } from "react-native";
 
+// Estilização do site
 const styles = StyleSheet.create({
+  // Página principal
   container: {
     flex: 1,
     backgroundColor: "#000",
@@ -47,7 +49,7 @@ const styles = StyleSheet.create({
     backgroundColor: "red",
     borderRadius: 5,
     padding: 10,
-    width: '80%',
+    width: "80%",
     alignItems: "center",
     marginTop: 20,
   },
@@ -72,6 +74,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
   },
 
+  // Página do Modal
   modalTitle2: {
     fontSize: 30,
     color: "white",
@@ -90,7 +93,7 @@ const styles = StyleSheet.create({
     fontSize: 35,
     marginVertical: 10,
     fontWeight: "bold",
-    marginTop: '2%'
+    marginTop: "2%",
   },
 
   modalText2: {
