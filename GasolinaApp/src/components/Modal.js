@@ -1,9 +1,9 @@
 // Importando os componentes
 import { Modal, View } from "react-native";
 import Textos from "./Text";
-import SegundaImagem from "./ImageTwo";
 import styles from "../styles/Stylesheet";
-import BotaoModal from "./ButtonModalComponent";
+import Botao from "./ButtonComponent";
+import Imagem from "./ImageOne";
 
 // Página do Modal
 export default function ModalTela({
@@ -24,7 +24,10 @@ export default function ModalTela({
       onRequestClose={setModal}
     >
       <View style={styles.modalContainer}>
-        <SegundaImagem />
+        <Imagem
+          style={styles.logo}
+          imgsource={require("../assets/images/gas.png")}
+        />
 
         <Textos estilo={styles.modalText1} texto={recomended} />
 
@@ -32,7 +35,12 @@ export default function ModalTela({
 
         <Textos estilo={styles.modalText2} texto={etanol} />
         <Textos estilo={styles.modalText3} texto={gas} />
-        <BotaoModal ButtonValueModal={ButtonValue} />
+        <Botao
+          style={styles.button}
+          text="Calcular Novamente!"
+          styletexto={styles.buttonText}
+          ButtonValue={ButtonValue}
+        />
       </View>
     </Modal>
   );
