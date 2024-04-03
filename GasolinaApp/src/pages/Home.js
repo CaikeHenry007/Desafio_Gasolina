@@ -2,7 +2,6 @@
 import { View, TextInput } from "react-native";
 import React, { useState } from "react";
 import styles from "../styles/Stylesheet";
-import PrimeiraImagem from "../components/ImageOne";
 import Textos from "../components/Text";
 import Botao from "../components/ButtonComponent";
 import ModalTela from "../components/Modal";
